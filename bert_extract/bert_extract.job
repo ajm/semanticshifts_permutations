@@ -1,0 +1,16 @@
+#!/bin/bash
+#SBATCH --job-name=bertextract
+#SBATCH --account=Project_2002983
+#SBATCH -c 1
+#SBATCH -t 1:00:00
+#SBATCH --mem=64G
+#SBATCH --partition=gpu
+#SBATCH --gres=gpu:v100:1
+#SBATCH --chdir=/projappl/project_2002983/ajmedlar/semanticshifts/bert_extract
+
+export MKL_NUM_THREADS=$SLURM_CPUS_PER_TASK
+export NUMEXPR_NUM_THREADS=$SLURM_CPUS_PER_TASK
+export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+
+srun ./bert_extract.sh $1 $2 $3 $4 $5
+
