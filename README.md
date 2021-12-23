@@ -50,7 +50,7 @@ Extract embeddings and run permutations tests. You need to edit `#SBATCH --chdir
 
 ## 3. Postprocess results using FDR correction
 
-The results file only contains raw P-values. Run `postprocess.py` to apply Benjamini-Hochberg Procedure and add groundtruth data to results.
+The results file only contains raw P-values. Run `postprocess.py` to apply Benjamini-Hochberg Procedure and add groundtruth data to results. The fields in the output file are: word, term frequency in corpus 1 (freq1), term frequency in corpus 2 (freq2), semantic shift from ground truth (shift), distance calculated using BERT (dist), P-value (pval) and FDR-corrected P-value (fdr).
 
     python postprocess.py ../data/annotated_words.csv /scratch/project_2002983/ajmedlar/lfc/lfc.txt > lfc2.txt
 
