@@ -41,8 +41,6 @@ def main() :
         word, freq1, freq2, dist, ppval = d
         print(word, freq1, freq2, shifts[word], dist, ppval, fdr[idx])
 
-    print("processed {} words\n".format(len(data)))
-
     return 0
 
 if __name__ == '__main__' :
