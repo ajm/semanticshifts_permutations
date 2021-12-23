@@ -34,7 +34,7 @@
 
 ## 1. BERT finetuning
 
-Finetune a BERT model. You need to edit `#SBATCH --workdir=/proj/ajmedlar/semanticshifts/bert_finetuning` line in finetuning.job to point to your PROJ directory. The three parameters are training data, output directory and number of epoches. The data was cleaned using `./scripts/clean_lfc_dataset_for_bert_finetuning.py` (does not include titles of comment threads, only comments with body tags).
+Finetune a BERT model. You need to edit `#SBATCH --chdir=/projappl/project_2002983/ajmedlar/semanticshifts/bert_finetuning` line in finetuning.job to point to your PROJ directory. The three parameters are training data, output directory and number of epoches. The data was cleaned using `./scripts/clean_lfc_dataset_for_bert_finetuning.py` (does not include titles of comment threads, only comments with body tags).
 
     cd bert_finetuning
 
@@ -42,7 +42,7 @@ Finetune a BERT model. You need to edit `#SBATCH --workdir=/proj/ajmedlar/semant
 
 ## 2. Extract embeddings and calculate P-values using permutation test
 
-Extract embeddings and run permutations tests. You need to edit `#SBATCH --chdir=/projappl/project_2002983/ajmedlar/semanticshifts/bert_extract` line in finetuning.job to point to your PROJ directory. The 5 parameters are the BERT model directory, corpus 1, corpus 2, word list and results file name.
+Extract embeddings and run permutations tests. You need to edit `#SBATCH --chdir=/projappl/project_2002983/ajmedlar/semanticshifts/bert_extract` line in bert\_extract.job to point to your PROJ directory. The 5 parameters are the BERT model directory, corpus 1, corpus 2, word list and results file name.
 
     cd bert_extract
 
